@@ -1,11 +1,10 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
-
 using namespace std;
+
 
 int main() {
     
-    unsigned long long int n,m, k;
+    unsigned long long int n, k;
     
     cout << "n= ";
     cin >> n;
@@ -13,22 +12,17 @@ int main() {
     cin >> k;
     
     int num[9] = {0};
+    int nrCifre = 0;
     
     for(int i = 0; i < 9; i++){
-        int cifra = n % 10;
-        
-        if(cifra == 0) {break;}
-        
-        m = m * 10 + n % 10;
+        num[i] = n % 10;
+        nrCifre++;
         n /= 10;
+        if(n == 0) break;
     }
     
-    for(int i = 0; i < 9; i++){
-        num[i] = m % 10;
-        m /= 10;
-    }
 
-    cout << num[k];
+    cout << num[nrCifre - 1 - k];
 
     return 0;
 }
